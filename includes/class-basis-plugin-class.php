@@ -51,17 +51,4 @@ class |UNIQUESTRING|BasisPluginClass
 
 	}
 
-	public static function uninstall()
-	{
-
-		// TODO
-		// if ( __FILE__ != WP_UNINSTALL_PLUGIN ) {
-
-		// 	return;
-			
-		// }
-		
-	}
-
-
 }

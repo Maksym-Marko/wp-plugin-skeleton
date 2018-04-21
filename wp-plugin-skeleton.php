@@ -43,7 +43,4 @@ if ( ! class_exists( 'UniqueClassMame' ) ) {
 	// Deactivation
 	register_deactivation_hook( __FILE__, array( '|UNIQUESTRING|BasisPluginClass', 'deactivate' ) );
 
-	// Uninstall
-	//register_uninstall_hook( __FILE__, array( '|UNIQUESTRING|BasisPluginClass', 'uninstall' ) );
-
 }
