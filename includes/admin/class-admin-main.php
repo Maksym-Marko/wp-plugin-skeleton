@@ -51,14 +51,17 @@ class |UNIQUESTRING|AdminMain
 
 			public function admin_index()
 			{
-				echo '<h1>Title</h1>';
+				
+				// require index page
+				mxsbap_require_template_admin( 'index.php' );
+
 			}
 
 		// add settings link
 		public function settings_link( $links )
 		{
 
-			$settings_link = '<a href="options-general.php?page=|unique_link_page|">Settings</a>';
+			$settings_link = '<a href="admin.php?page=|unique_link_page|">Settings</a>'; // options-general.php
 
 			array_push( $links, $settings_link );
 

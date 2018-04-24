@@ -24,13 +24,13 @@ final class |UniqueClassMame|
 	public function define_constants()
 	{
 
-		$this->define( '|UNIQUESTRING|_TABLE_SLUG', '|uniquestring|_table_slug' );
+		$this->|uniquestring|_define( '|UNIQUESTRING|_TABLE_SLUG', '|uniquestring|_table_slug' );
 
 		// include php files
-		$this->define( '|UNIQUESTRING|_PLUGIN_ABS_PATH', dirname( |UNIQUESTRING|_PLUGIN_PATH ) . '/' );
+		$this->|uniquestring|_define( '|UNIQUESTRING|_PLUGIN_ABS_PATH', dirname( |UNIQUESTRING|_PLUGIN_PATH ) . '\\' );
 
 		// version
-		$this->define( '|UNIQUESTRING|_PLUGIN_VERSION', time() ); // Must be replaced before production on for example 1.0
+		$this->|uniquestring|_define( '|UNIQUESTRING|_PLUGIN_VERSION', time() ); // Must be replaced before production on for example 1.0
 
 
 	}
@@ -42,18 +42,21 @@ final class |UniqueClassMame|
 	{
 
 		// Basis functions
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/class-basis-plugin-class.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\class-basis-plugin-class.php';
+
+		// Helpers
+		require_once MXSBAP_PLUGIN_ABS_PATH . 'includes\core\helpers.php';
 
 		// Part of the Frontend
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/frontend/class-frontend-main.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\frontend\class-frontend-main.php';
 
 		// Part of the Administrator
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/admin/class-admin-main.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\admin\class-admin-main.php';
 
 	}
 
 	// Define function
-	private function define( $mame, $value )
+	private function |uniquestring|_define( $mame, $value )
 	{
 
 		if( ! defined( $mame ) )
