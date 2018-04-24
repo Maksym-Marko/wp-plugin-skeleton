@@ -3,16 +3,17 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-final class UniqueClassMame
+final class |UniqueClassMame|
 {
 
 	/*
-	* UniqueClassMame constructor
+	* |UniqueClassMame| constructor
 	*/
 	public function __construct()
 	{
 
 		$this->define_constants();
+		
 		$this->include();
 
 	}

@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: WP Plugin skeleton
-Plugin URI: https://github.com/Maxim-us/wp_plugin_skeleton
-Description: ...
+Plugin URI: https://github.com/Maxim-us/wp-plugin-skeleton
+Description: Some description...
 Author: Marko Maksym
 Version: 1.0
 Author URI: https://github.com/Maxim-us
@@ -21,18 +21,26 @@ if ( ! defined( '|UNIQUESTRING|_PLUGIN_PATH' ) ) {
 // Define |UNIQUESTRING|_PLUGIN_URL
 if ( ! defined( '|UNIQUESTRING|_PLUGIN_URL' ) ) {
 
-	// Return http://my-domain.com/wp-content/plugins/wp_plugin_skeleton/
+	// Return http://my-domain.com/wp-content/plugins/wp-plugin-skeleton/
 	define( '|UNIQUESTRING|_PLUGIN_URL', plugins_url( '/', __FILE__ ) );
 
 }
 
-// Include the main UniqueClassMame class.
-if ( ! class_exists( 'UniqueClassMame' ) ) {
+// Define |UNIQUESTRING|_PLUGN_BASE_NAME
+if ( ! defined( '|UNIQUESTRING|_PLUGN_BASE_NAME' ) ) {
 
-	require_once plugin_dir_path( __FILE__ ) . '/includes/class-|uniquestring|file-name.php';
+	// Return share-buddypress-activity-pluso/share-buddypress-activity-pluso.php
+	define( '|UNIQUESTRING|_PLUGN_BASE_NAME', plugin_basename( __FILE__ ) );
+
+}
+
+// Include the main |UniqueClassMame| class.
+if ( ! class_exists( '|UniqueClassMame|' ) ) {
+
+	require_once plugin_dir_path( __FILE__ ) . '/includes/class-final-main-class.php';
 
 	// Create new instance
-	new UniqueClassMame();
+	new |UniqueClassMame|();
 
 	/*
 	* Registration hooks

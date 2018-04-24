@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class |UNIQUESTRING|BasisPluginClass
 {
 
-	private $table_slug = |UNIQUESTRING|_TABLE_SLUG;
+	private static $table_slug = |UNIQUESTRING|_TABLE_SLUG;
 
 	public static function activate()
 	{
@@ -16,7 +16,7 @@ class |UNIQUESTRING|BasisPluginClass
 		global $wpdb;
 
 		// Table name
-		$table_name = $wpdb->prefix . self::$table_name_slug;
+		$table_name = $wpdb->prefix . self::$table_slug;
 
 		if ( $wpdb->get_var( "SHOW TABLES LIKE '" . $table_name . "'" ) !=  $table_name ) {
 
