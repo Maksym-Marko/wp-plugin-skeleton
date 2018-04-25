@@ -45,7 +45,10 @@ class |UNIQUESTRING|AdminMain
 		public function add_admin_pages()
 		{
 
-			add_menu_page( 'Title of the page', 'Link Name', 'manage_options', '|unique_link_page|', array( $this, 'admin_index' ), '', 111 );
+			add_menu_page( 'Title of the page', 'Link Name', 'manage_options', '|unique_menu_slug|', array( $this, 'admin_index' ), '|icon|', 111 ); // icons https://developer.wordpress.org/resource/dashicons/#id
+
+			// add submenu
+			add_submenu_page( '|unique_menu_slug|', 'Submenu title', 'Submenu item', 'manage_options', '|unique_submenu_slug|', array( $this, 'page_distributor' ) );
 
 		}
 
@@ -57,11 +60,38 @@ class |UNIQUESTRING|AdminMain
 
 			}
 
+			public function page_distributor()
+			{
+
+				// require main menu
+				mxsbap_require_template_admin( 'main_module_menu.php' );
+
+				switch( $_GET['p'] ){
+
+					case 'page1' :
+						$action = 'page1.php';
+						break;
+
+					case 'page2' :
+						$action = 'page2.php';
+						break;
+
+					default :
+						$action = 'index.php';
+						break;
+
+				}
+
+				// require pages
+				mxsbap_require_template_admin( $action );
+
+			}
+
 		// add settings link
 		public function settings_link( $links )
 		{
 
-			$settings_link = '<a href="admin.php?page=|unique_link_page|">Settings</a>'; // options-general.php
+			$settings_link = '<a href="admin.php?page=|unique_menu_slug|">Settings</a>'; // options-general.php
 
 			array_push( $links, $settings_link );
 

@@ -16,8 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 		<p class="mx-submit_button_wrap">
 			<input class="button-primary" type="submit" name="bp-tools-submit" value="Save" />
-			<!-- <input type="hidden" id="_wpnonce" name="_wpnonce" value="32f1fc4155" />
-			<input type="hidden" name="_wp_http_referer" value="/wp-admin/tools.php?page=bp-tools" /> -->
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="32f1fc4155" />
+			<input type="hidden" name="_wp_http_referer" value="/wp-admin/tools.php?page=bp-tools" />
 		</p>
 
 	</form>
