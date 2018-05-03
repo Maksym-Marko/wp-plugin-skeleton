@@ -11,14 +11,22 @@ Author URI: https://github.com/Maxim-us
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-// Define |UNIQUESTRING|_PLUGIN_PATH
+/*
+* Unique string - |UNIQUESTRING|
+*/
+
+/*
+* Define |UNIQUESTRING|_PLUGIN_PATH
+*/
 if ( ! defined( '|UNIQUESTRING|_PLUGIN_PATH' ) ) {
 
 	define( '|UNIQUESTRING|_PLUGIN_PATH', __FILE__ );
 
 }
 
-// Define |UNIQUESTRING|_PLUGIN_URL
+/*
+* Define |UNIQUESTRING|_PLUGIN_URL
+*/
 if ( ! defined( '|UNIQUESTRING|_PLUGIN_URL' ) ) {
 
 	// Return http://my-domain.com/wp-content/plugins/wp-plugin-skeleton/
@@ -26,7 +34,9 @@ if ( ! defined( '|UNIQUESTRING|_PLUGIN_URL' ) ) {
 
 }
 
-// Define |UNIQUESTRING|_PLUGN_BASE_NAME
+/*
+* Define |UNIQUESTRING|_PLUGN_BASE_NAME
+*/
 if ( ! defined( '|UNIQUESTRING|_PLUGN_BASE_NAME' ) ) {
 
 	// Return share-buddypress-activity-pluso/share-buddypress-activity-pluso.php
@@ -34,7 +44,9 @@ if ( ! defined( '|UNIQUESTRING|_PLUGN_BASE_NAME' ) ) {
 
 }
 
-// Include the main |UniqueClassMame| class.
+/*
+* Include the main |UniqueClassMame| class
+*/
 if ( ! class_exists( '|UniqueClassMame|' ) ) {
 
 	require_once plugin_dir_path( __FILE__ ) . '/includes/class-final-main-class.php';

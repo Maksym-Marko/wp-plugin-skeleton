@@ -15,7 +15,20 @@ class |UNIQUESTRING|AdminMain
 
 	}
 
-	// Register function
+	/*
+	* Include the necessary basic files for the admin panel
+	*/
+	public function include()
+	{
+
+		// require database-talk class
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\admin\class-database-talk.php';
+
+	}
+
+	/*
+	* Registration of styles and scripts
+	*/
 	public function register()
 	{
 
@@ -56,7 +69,7 @@ class |UNIQUESTRING|AdminMain
 			{
 				
 				// require index page
-				mxsbap_require_template_admin( 'index.php' );
+				|uniquestring|_require_template_admin( 'index.php' );
 
 			}
 
@@ -64,7 +77,7 @@ class |UNIQUESTRING|AdminMain
 			{
 
 				// require main menu
-				mxsbap_require_template_admin( 'main_module_menu.php' );
+				|uniquestring|_require_template_admin( 'main_module_menu.php' );
 
 				switch( $_GET['p'] ){
 
@@ -83,7 +96,7 @@ class |UNIQUESTRING|AdminMain
 				}
 
 				// require pages
-				mxsbap_require_template_admin( $action );
+				|uniquestring|_require_template_admin( $action );
 
 			}
 

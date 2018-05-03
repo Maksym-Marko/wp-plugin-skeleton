@@ -6,7 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class |UNIQUESTRING|FrontEndMain
 {
 
-	// Register function
+	/*
+	* Registration of styles and scripts
+	*/
 	public function register()
 	{
 
