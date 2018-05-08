@@ -6,6 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class |UNIQUESTRING|DataBaseTalk
 {
 
+	/*
+	* |UNIQUESTRING|DataBaseTalk constructor
+	*/
 	public function __construct()
 	{
 

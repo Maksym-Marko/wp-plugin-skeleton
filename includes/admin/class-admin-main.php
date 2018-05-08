@@ -8,6 +8,9 @@ class |UNIQUESTRING|AdminMain
 
 	public $plugin_name;
 
+	/*
+	* |UNIQUESTRING|AdminMain constructor
+	*/
 	public function __construct()
 	{
 

@@ -30,7 +30,7 @@ final class |UniqueClassMame|
 		$this->|uniquestring|_define( '|UNIQUESTRING|_PLUGIN_ABS_PATH', dirname( |UNIQUESTRING|_PLUGIN_PATH ) . '\\' );
 
 		// version
-		$this->|uniquestring|_define( '|UNIQUESTRING|_PLUGIN_VERSION', time() ); // Must be replaced before production on for example 1.0
+		$this->|uniquestring|_define( '|UNIQUESTRING|_PLUGIN_VERSION', time() ); // Must be replaced before production on for example '1.0'
 
 
 	}
@@ -45,7 +45,7 @@ final class |UniqueClassMame|
 		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\class-basis-plugin-class.php';
 
 		// Helpers
-		require_once MXSBAP_PLUGIN_ABS_PATH . 'includes\core\helpers.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\core\helpers.php';
 
 		// Part of the Frontend
 		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\frontend\class-frontend-main.php';
