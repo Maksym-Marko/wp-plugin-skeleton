@@ -3,11 +3,11 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-final class |UniqueClassMame|
+final class |UniqueClassName|
 {
 
 	/*
-	* |UniqueClassMame| constructor
+	* |UniqueClassName| constructor
 	*/
 	public function __construct()
 	{

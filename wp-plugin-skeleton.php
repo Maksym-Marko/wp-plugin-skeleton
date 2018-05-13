@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: WP Plugin skeleton
-Plugin URI: https://github.com/Maxim-us/wp-plugin-skeleton
-Description: Some description...
-Author: Marko Maksym
+Plugin Name: |Plugin Name|
+Plugin URI: |Plugin URI|
+Description: |Brief description|
+Author: |Author|
 Version: 1.0
-Author URI: https://github.com/Maxim-us
+Author URI: |Author URI|
 */
 
 // Exit if accessed directly
@@ -39,20 +39,20 @@ if ( ! defined( '|UNIQUESTRING|_PLUGIN_URL' ) ) {
 */
 if ( ! defined( '|UNIQUESTRING|_PLUGN_BASE_NAME' ) ) {
 
-	// Return share-buddypress-activity-pluso/share-buddypress-activity-pluso.php
+	// Return wp-plugin-skeleton/wp-plugin-skeleton.php
 	define( '|UNIQUESTRING|_PLUGN_BASE_NAME', plugin_basename( __FILE__ ) );
 
 }
 
 /*
-* Include the main |UniqueClassMame| class
+* Include the main |UniqueClassName| class
 */
-if ( ! class_exists( '|UniqueClassMame|' ) ) {
+if ( ! class_exists( '|UniqueClassName|' ) ) {
 
 	require_once plugin_dir_path( __FILE__ ) . '/includes/class-final-main-class.php';
 
 	// Create new instance
-	new |UniqueClassMame|();
+	new |UniqueClassName|();
 
 	/*
 	* Registration hooks
