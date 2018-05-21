@@ -23,7 +23,7 @@ class |UNIQUESTRING|BasisPluginClass
 			$sql = "CREATE TABLE IF NOT EXISTS `$table_name`
 			(
 				`id` int(11) NOT NULL AUTO_INCREMENT,
-				`post_id` varchar(40) NOT NULL,
+				`some_field` varchar(40) NOT NULL,
 				PRIMARY KEY (`id`)
 			) ENGINE=MyISAM DEFAULT CHARSET=$wpdb->charset AUTO_INCREMENT=1;";
 
@@ -35,7 +35,7 @@ class |UNIQUESTRING|BasisPluginClass
 				$table_name,
 
 				array(
-					'post_id' => 0,
+					'some_field' => 'Some string.',
 				)
 
 			);

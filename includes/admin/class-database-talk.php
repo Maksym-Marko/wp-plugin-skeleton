@@ -38,16 +38,8 @@ class |UNIQUESTRING|DataBaseTalk
 		// Checked or nonce match
 		if( wp_verify_nonce( $_POST['nonce'], '|uniquestring|_nonce_request' ) ){
 
-			// Restore data by default
-			if( $_POST['is_checked_restore'] === 'restore' ){
-
-				$this->restore_data();
-
-			} else{
-
-				$this->update_script( $_POST['script_string'], $_POST['block_string'] );
-
-			}			
+			// Update data
+			$this->update_script( $_POST['|uniquestring|_some_string'] );		
 
 		}
 
@@ -56,12 +48,10 @@ class |UNIQUESTRING|DataBaseTalk
 	}
 
 		// Update data
-		public function update_script( $string_script, $string_block )
+		public function update_script( $string )
 		{
 
-			$clean_string_script = str_replace( '\\', '', esc_html( $string_script ) );
-
-			$clean_string_block = str_replace( '\\', '', esc_html( $string_block ) );
+			$clean_string = str_replace( '\\', '', esc_html( $string ) );
 
 			global $wpdb;
 
@@ -71,8 +61,7 @@ class |UNIQUESTRING|DataBaseTalk
 
 				$table_name, 
 				array(
-					'script' => $clean_string_script,
-					'block_icons' => $clean_string_block,
+					'some_field' => $clean_string,
 				), 
 				array( 'id' => 1 ), 
 				array( 
