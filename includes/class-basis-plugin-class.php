@@ -41,13 +41,13 @@ class |UNIQUESTRING|BasisPluginClass
 			);
 		}
 
-		// Rewrite rules
-		flush_rewrite_rules();
-
 	}
 
 	public static function deactivate()
 	{
+
+		// Rewrite rules
+		flush_rewrite_rules();
 
 	}
 

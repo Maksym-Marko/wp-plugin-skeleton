@@ -72,42 +72,6 @@ class |UNIQUESTRING|DataBaseTalk
 
 		}
 
-		// Restore data
-		public function restore_data()
-		{
-
-			$restore_string_script = '&lt;script type=&quot;text/javascript&quot;&gt;(function() {
-			  if (window.pluso)if (typeof window.pluso.start == &quot;function&quot;) return;
-			  if (window.ifpluso==undefined) { window.ifpluso = 1;
-			    var d = document, s = d.createElement(&#039;script&#039;), g = &#039;getElementsByTagName&#039;;
-			    s.type = &#039;text/javascript&#039;; s.charset=&#039;UTF-8&#039;; s.async = true;
-			    s.src = (&#039;https:&#039; == window.location.protocol ? &#039;https&#039; : &#039;http&#039;)  + &#039;://share.pluso.ru/pluso-like.js&#039;;
-			    var h=d[g](&#039;body&#039;)[0];
-			    h.appendChild(s);
-			  }})();&lt;/script&gt;';
-
-			$restore_string_block = '&lt;div class=&quot;pluso&quot; data-background=&quot;transparent&quot; data-options=&quot;medium,round,line,horizontal,nocounter,theme=04&quot; data-services=&quot;vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print&quot; data-url=&quot;%PAGE-URL%&quot; data-title=&quot;%TITLE%&quot; data-description=&quot;%DESCRIPTION%&quot;&gt;&lt;/div&gt;';
-
-			global $wpdb;
-
-			$table_name = $wpdb->prefix . |UNIQUESTRING|_TABLE_SLUG;
-
-			$wpdb->update(
-
-				$table_name, 
-				array(
-					'script' => $restore_string_script,
-					'block_icons' => $restore_string_block,
-				), 
-				array( 'id' => 1 ), 
-				array( 
-					'%s'
-				)
-
-			);
-
-		}
-
 }
 
 // New instance
