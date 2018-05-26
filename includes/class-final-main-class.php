@@ -14,7 +14,7 @@ final class |UniqueClassName|
 
 		$this->define_constants();
 		
-		$this->include();
+		$this->|uniquestring|_include();
 
 	}
 
@@ -38,7 +38,7 @@ final class |UniqueClassName|
 	/*
 	* Incude required core files
 	*/
-	public function include()
+	public function |uniquestring|_include()
 	{
 
 		// Basis functions

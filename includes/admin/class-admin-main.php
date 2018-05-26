@@ -16,14 +16,14 @@ class |UNIQUESTRING|AdminMain
 
 		$this->plugin_name = |UNIQUESTRING|_PLUGN_BASE_NAME;
 
-		$this->include();
+		$this->|uniquestring|_include();
 
 	}
 
 	/*
 	* Include the necessary basic files for the admin panel
 	*/
-	public function include()
+	public function |uniquestring|_include()
 	{
 
 		// require database-talk class
