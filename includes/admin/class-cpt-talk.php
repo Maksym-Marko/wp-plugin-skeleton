@@ -63,9 +63,15 @@ class |UNIQUESTRING|CPTclass
 
 		) );
 
-		// TODO ...
 		// Rewrite rules
-		flush_rewrite_rules();
+		if( is_admin() && get_option( '|uniquestring|_flush_rewrite_rules' ) == 'go_flush_rewrite_rules' )
+		{
+
+			delete_option( '|uniquestring|_flush_rewrite_rules' );
+
+			flush_rewrite_rules();
+
+		}
 
 	}
 

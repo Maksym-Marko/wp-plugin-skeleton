@@ -12,6 +12,9 @@ class |UNIQUESTRING|BasisPluginClass
 	public static function activate()
 	{
 
+		// set option for rewrite rules CPT
+		self::create_option_for_activation();
+
 		// Create table
 		global $wpdb;
 
@@ -48,6 +51,16 @@ class |UNIQUESTRING|BasisPluginClass
 
 		// Rewrite rules
 		flush_rewrite_rules();
+
+	}
+
+	/*
+	* This function sets the option in the table for CPT rewrite rules
+	*/
+	public static function create_option_for_activation()
+	{
+
+		add_option( '|uniquestring|_flush_rewrite_rules', 'go_flush_rewrite_rules' );
 
 	}
 
