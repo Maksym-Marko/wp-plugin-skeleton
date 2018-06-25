@@ -34,11 +34,11 @@ class |UNIQUESTRING|AdminMain
 	/*
 	* Registration of styles and scripts
 	*/
-	public function register()
+	public function |uniquestring|_register()
 	{
 
 		// register scripts and styles
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, '|uniquestring|_enqueue' ) );
 
 		// register admin menu
 		add_action( 'admin_menu', array( $this, 'add_admin_pages' ) );
@@ -48,7 +48,7 @@ class |UNIQUESTRING|AdminMain
 
 	}
 
-		public function enqueue()
+		public function |uniquestring|_enqueue()
 		{
 
 			wp_enqueue_style( '|uniquestring|_font_awesome', |UNIQUESTRING|_PLUGIN_URL . 'assets/font-awesome-4.6.3/css/font-awesome.min.css' );
@@ -123,4 +123,4 @@ class |UNIQUESTRING|AdminMain
 $initialize_class = new |UNIQUESTRING|AdminMain();
 
 // Apply scripts and styles
-$initialize_class->register();
+$initialize_class->|uniquestring|_register();
