@@ -63,10 +63,10 @@ class |UNIQUESTRING|AdminMain
 		public function add_admin_pages()
 		{
 
-			add_menu_page( 'Title of the page', 'Link Name', 'manage_options', '|unique_menu_slug|', array( $this, 'admin_index' ), 'dashicons-image-filter', 111 ); // icons https://developer.wordpress.org/resource/dashicons/#id
+			add_menu_page( __( 'Title of the page', '|uniquestring|-domain' ), __( 'Link Name', '|uniquestring|-domain' ), 'manage_options', '|unique_menu_slug|', array( $this, 'admin_index' ), 'dashicons-image-filter', 111 ); // icons https://developer.wordpress.org/resource/dashicons/#id
 
 			// add submenu
-			add_submenu_page( '|unique_menu_slug|', 'Submenu title', 'Submenu item', 'manage_options', '|unique_submenu_slug|', array( $this, 'page_distributor' ) );
+			add_submenu_page( '|unique_menu_slug|', __( 'Submenu title', '|uniquestring|-domain' ), __( 'Submenu item', '|uniquestring|-domain' ), 'manage_options', '|unique_submenu_slug|', array( $this, 'page_distributor' ) );
 
 		}
 
