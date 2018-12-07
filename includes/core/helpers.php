@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 */
 function |uniquestring|_require_template_admin( $file ) {
 
-	require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\admin\templates\\' . $file;
+	require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/admin/templates/' . $file;
 
 }
 

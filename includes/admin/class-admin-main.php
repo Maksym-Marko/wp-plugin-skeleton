@@ -27,7 +27,7 @@ class |UNIQUESTRING|AdminMain
 	{
 
 		// require database-talk class
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\admin\class-database-talk.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/admin/class-database-talk.php';
 
 	}
 

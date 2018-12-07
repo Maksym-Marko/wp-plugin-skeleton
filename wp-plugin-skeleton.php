@@ -52,7 +52,10 @@ if ( ! class_exists( '|UniqueClassName|' ) ) {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-final-main-class.php';
 
 	// Create new instance
-	new |UniqueClassName|();
+	$|uniquestring|_new_instance = new |UniqueClassName|();
+
+	// activation|deactivation class include
+	$|uniquestring|_new_instance->|uniquestring|_basic_pugin_function();
 
 	/*
 	* Registration hooks

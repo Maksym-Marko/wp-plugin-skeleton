@@ -27,7 +27,7 @@ final class |UniqueClassName|
 		$this->|uniquestring|_define( '|UNIQUESTRING|_TABLE_SLUG', '|uniquestring|_table_slug' );
 
 		// include php files
-		$this->|uniquestring|_define( '|UNIQUESTRING|_PLUGIN_ABS_PATH', dirname( |UNIQUESTRING|_PLUGIN_PATH ) . '\\' );
+		$this->|uniquestring|_define( '|UNIQUESTRING|_PLUGIN_ABS_PATH', dirname( |UNIQUESTRING|_PLUGIN_PATH ) . '/' );
 
 		// version
 		$this->|uniquestring|_define( '|UNIQUESTRING|_PLUGIN_VERSION', time() ); // Must be replaced before production on for example '1.0'
@@ -41,23 +41,20 @@ final class |UniqueClassName|
 	public function |uniquestring|_include()
 	{
 
-		// Basis functions
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\class-basis-plugin-class.php';
-
 		// Helpers
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\core\helpers.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/core/helpers.php';
 
 		// Part of the Frontend
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\frontend\class-frontend-main.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/frontend/class-frontend-main.php';
 
 		// Part of the Administrator
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\admin\class-admin-main.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/admin/class-admin-main.php';
 
 		/*
 		* CPT class
 		* If you do not need CPT, delete the line below
 		*/
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes\admin\class-cpt-talk.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/admin/class-cpt-talk.php';
 
 	}
 
@@ -74,5 +71,11 @@ final class |UniqueClassName|
 
 	}
 
+	public function |uniquestring|_basic_pugin_function()
+	{
+		// Basis functions
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/class-basis-plugin-class.php';
+
+	}
 
 }
