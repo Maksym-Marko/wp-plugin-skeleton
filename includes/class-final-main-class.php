@@ -58,16 +58,25 @@ final class |UniqueClassName|
 
 	}
 
-	// Define function
+	/*
+	* Define function
+	* You should check to type of data that you put into your constants.
+	* if variable $value is an array, that constant consists of serialized data.
+	*/
 	private function |uniquestring|_define( $mame, $value )
 	{
 
-		if( ! defined( $mame ) )
-		{
+		// if $value is array
+		if( is_array( $value ) ) {
+
+			define( $mame, serialize( $value ) );
+
+		} else {
 
 			define( $mame, $value );
 
 		}
+
 
 	}
 
