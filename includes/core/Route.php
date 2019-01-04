@@ -17,10 +17,10 @@ class |UNIQUESTRING|_Route
 		// ...
 	}
 	
-	public static function |uniquestring|_get( $controller, $action, $slug, $menu_properties )
+	public static function |uniquestring|_get( ...$args )
 	{
 
-		return new |UNIQUESTRING|_Route_Registrar( $controller, $action, $slug, $menu_properties );
+		return new |UNIQUESTRING|_Route_Registrar( ...$args );
 
 	}
 	

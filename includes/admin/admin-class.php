@@ -35,15 +35,16 @@ class |UNIQUESTRING|AdminMain
 	{
 
 		// main menu item
-		|UNIQUESTRING|_Route::|uniquestring|_get( 'MainMenuController', 'index', 'some_slug', [
-			'page_title' => 'Some title',
-			'menu_title' => 'Name of Main menu Item'
+		|UNIQUESTRING|_Route::|uniquestring|_get( 'MainMenuController', 'index', '', [
+			'page_title' => 'Main Menu title',
+			'menu_title' => 'Main menu'
 		] );
 
-		|UNIQUESTRING|_Route::|uniquestring|_get( 'MainMenuController', 'index', 'some_slug2', [
-			'page_title' => 'Some title2',
-			'menu_title' => 'Name 2'
-		] );
+		// sub menu item
+		|UNIQUESTRING|_Route::|uniquestring|_get( 'SubMenuController', 'index', '', [
+			'page_title' => 'Sub Menu title',
+			'menu_title' => 'Sub Menu'
+		], 'sub_menu' );
 
 	}
 
