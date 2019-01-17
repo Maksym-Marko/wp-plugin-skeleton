@@ -20,16 +20,25 @@ final class |UniqueClassName|
 	* Include required core files
 	*/
 	public function |uniquestring|_include()
-	{
+	{		
+
+		// helpers
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/core/helpers.php';
+
+		// cathing errors
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/core/Catching-Errors.php';
 
 		// Route
 		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/core/Route.php';
 
 		// Models
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/core/Models.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/core/Model.php';
+
+		// Views
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/core/View.php';
 
 		// Controllers
-		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/core/Controllers.php';
+		require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/core/Controller.php';
 
 	}
 

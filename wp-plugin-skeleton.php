@@ -53,7 +53,7 @@ if ( ! defined( '|UNIQUESTRING|_PLUGN_BASE_NAME' ) ) {
 */
 if ( ! defined( '|UNIQUESTRING|_TABLE_SLUG' ) ) {
 
-	define( '|UNIQUESTRING|_TABLE_SLUG', '|UNIQUESTRING|_table_slug' );
+	define( '|UNIQUESTRING|_TABLE_SLUG', '|uniquestring|_table_slug' );
 
 }
 
@@ -97,10 +97,11 @@ require_once plugin_dir_path( __FILE__ ) . 'install.php';
 * Registration hooks
 */
 // Activation
-register_activation_hook( __FILE__, array( '|UNIQUESTRING|BasisPluginClass', 'activate' ) );
+register_activation_hook( __FILE__, array( '|UNIQUESTRING|_Basis_Plugin_Class', 'activate' ) );
 
 // Deactivation
-register_deactivation_hook( __FILE__, array( '|UNIQUESTRING|BasisPluginClass', 'deactivate' ) );
+register_deactivation_hook( __FILE__, array( '|UNIQUESTRING|_Basis_Plugin_Class', 'deactivate' ) );
+
 
 /*
 * Include the main |UniqueClassName| class

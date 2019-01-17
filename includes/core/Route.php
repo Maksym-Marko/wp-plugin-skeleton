@@ -11,7 +11,7 @@ require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . 'includes/core/Route-Registrar.php
 */
 class |UNIQUESTRING|_Route
 {
-	
+
 	public function __construct()
 	{
 		// ...

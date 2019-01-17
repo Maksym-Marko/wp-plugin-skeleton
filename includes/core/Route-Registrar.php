@@ -22,6 +22,11 @@ class |UNIQUESTRING|_Route_Registrar
 	public $slug = |UNIQUESTRING|_MAIN_MENU_SLUG;
 
 	/**
+	* catch class error
+	*/
+	public $class_attributes_error = NULL;
+
+	/**
 	* set properties
 	*/
 	public $properties = [
@@ -29,9 +34,8 @@ class |UNIQUESTRING|_Route_Registrar
 		'menu_title' 	=> 'Link Name',
 		'capability' 	=> 'manage_options',
 		'menu_slug' 	=> |UNIQUESTRING|_MAIN_MENU_SLUG,
-		'function' 		=> '|UNIQUESTRING|_view_connector',
 		'dashicons' 	=> 'dashicons-image-filter',
-		'position' 	=> 111
+		'position' 		=> 111
 	];
 
 	/**
@@ -45,7 +49,22 @@ class |UNIQUESTRING|_Route_Registrar
 	public function __construct( ...$args )
 	{
 
+		// set data
 		$this->|uniquestring|_set_data( ...$args );
+
+	}
+
+	/**
+	* require class
+	*/
+	public function |uniquestring|_require_controller( $controller )
+	{
+
+		if( file_exists( |UNIQUESTRING|_PLUGIN_ABS_PATH . "includes/admin/controllers/{$controller}.php" ) ) {
+
+			require_once |UNIQUESTRING|_PLUGIN_ABS_PATH . "includes/admin/controllers/{$controller}.php";
+
+		}
 
 	}
 
@@ -104,6 +123,23 @@ class |UNIQUESTRING|_Route_Registrar
 			
 		}
 
+		/**
+		* require controller
+		*/
+		$this->|uniquestring|_require_controller( $this->controller );
+
+		/**
+		* catching errors of class attrs
+		*/
+		$is_error_class_atr = |UNIQUESTRING|_Catching_Errors::|uniquestring|_catch_class_attributes_error( $this->controller, $this->action );
+		
+		// catch error class attr
+		if( $is_error_class_atr !== NULL ) {
+
+			$this->class_attributes_error = $is_error_class_atr;
+
+		}
+
 		// register admin menu
 		add_action( 'admin_menu', array( $this, $|uniquestring|_callback_function_menu ) );
 
@@ -114,7 +150,7 @@ class |UNIQUESTRING|_Route_Registrar
 	*/
 	public function |uniquestring|_create_admin_main_menu()
 	{
-			
+
 		add_menu_page( __( $this->properties['page_title'], '|uniquestring|-domain' ),
 			 __( $this->properties['menu_title'], '|uniquestring|-domain' ),
 			 $this->properties['capability'],
@@ -131,6 +167,7 @@ class |UNIQUESTRING|_Route_Registrar
 	public function |uniquestring|_create_admin_sub_menu()
 	{
 		
+		// create a menu
 		add_submenu_page( $this->slug,
 			 __( $this->properties['page_title'], '|uniquestring|-domain' ),
 			 __( $this->properties['menu_title'], '|uniquestring|-domain' ),
@@ -141,9 +178,18 @@ class |UNIQUESTRING|_Route_Registrar
 
 	}
 
+		// connect view
 		public function |uniquestring|_view_connector()
 		{
-			echo '123';
+
+			if( $this->class_attributes_error == NULL ) {
+
+				$class_inst = new $this->controller();
+
+				call_user_func( array( $class_inst, $this->action ) );
+
+			}
+			
 		}
 
 }
